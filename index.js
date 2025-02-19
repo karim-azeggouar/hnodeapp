@@ -25,7 +25,12 @@ app.get('/', (req, res) => {
      res.send('Bonjour, ceci est une réponse de la route GET !');
  });
 
-
+ app.post('/sommee', (req, res) => {
+     let nb1=req.body.n1;
+           let nb2=req.body.n2;
+           let r=somme(nb1,nb2);
+           res.json(success("la somme de "+nb1+"  et "+nb2+" est:"+r));
+ });
 
 
   // Route Somme
