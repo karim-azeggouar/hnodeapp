@@ -21,6 +21,13 @@ app.use(function(req, res, next) {
       next();
 });
 
+app.get('/', (req, res) => {
+     res.send('Bonjour, ceci est une réponse de la route GET !');
+ });
+
+
+
+
   // Route Somme
   CalculRouter.route('/somme')
 
