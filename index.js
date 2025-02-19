@@ -1,4 +1,4 @@
-const {success, error} = require('functions')
+const {success, error} = require('./functions')
 const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
