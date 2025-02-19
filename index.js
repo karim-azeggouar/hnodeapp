@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
      res.send('Bonjour, ceci est une réponse de la route GET !');
  });
 
- app.post('/sommee', (req, res) => {
+ app.post('/somme', (req, res) => {
      let nb1=req.body.n1;
            let nb2=req.body.n2;
            let r=somme(nb1,nb2);
@@ -33,29 +33,14 @@ app.get('/', (req, res) => {
  });
 
 
-  // Route Somme
-  CalculRouter.route('/somme')
-
-      .post((req, res) => {
-
-           let nb1=req.body.n1;
+ app.post('/produit', (req, res) => {
+     let nb1=req.body.n1;
            let nb2=req.body.n2;
-           let r=somme(nb1,nb2);
-           res.json(success("la somme de "+nb1+"  et "+nb2+" est:"+r));
+           let r=produit(nb1,nb2);
+           res.json(success("la le produit de "+nb1+"  et "+nb2+" est:"+r));
+ });
 
-      })
-
-// Route Produit
- CalculRouter.route('/produit')
-
-   .post((req, res) => {
-
-        let nb1=req.body.n1;
-        let nb2=req.body.n2;
-        let r=produit(nb1,nb2);
-        res.json(success("le produit de "+nb1+"  et "+nb2+" est:"+r));
-
-    }) 
+  
     /********************somme******************************************/
 
                              function somme(n1,n2){
